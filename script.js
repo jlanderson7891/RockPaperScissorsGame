@@ -8,11 +8,12 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-	if (playerSelection === "rock") {
-		if (computerSelection === "sissors") {
-			winner = playerSelection;
+	let player = playerSelection.toLowerCase();
+	if (player === "rock") {
+		if (computerSelection === "scissors") {
+			winner = "You win this round!";
 		} else if (computerSelection === "paper") {
-			winner = computerSelection;
+			winner = "You Lose";
 		} else {
 			winner = "Tie Game";
 		}
@@ -20,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
 	return winner;
 }
 
-const playerSelection = "rock";
+const playerSelection = "roCk";
 
 const computerSelection = getComputerChoice();
 
