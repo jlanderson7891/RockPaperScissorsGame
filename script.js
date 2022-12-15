@@ -1,21 +1,27 @@
 //computer input
 function getComputerChoice() {
-	const selArray = ["Rock", "Paper", "Scissors"];
+	const selArray = ["rock", "paper", "scissors"];
 
 	let randomChoice = selArray[Math.floor(Math.random() * selArray.length)];
 
 	return randomChoice;
-
-	// let randomNum = Math.floor(Math.random() * 3);
-
-	// let randomChoice = selArray.fromIndex(randomNum);
-
-	// return randomChoice;
 }
 
-console.log(getComputerChoice());
+function playRound(playerSelection, computerSelection) {
+	if (playerSelection === "rock") {
+		if (computerSelection === "sissors") {
+			winner = playerSelection;
+		} else if (computerSelection === "paper") {
+			winner = computerSelection;
+		} else {
+			winner = "Tie Game";
+		}
+	}
+	return winner;
+}
 
-//user input
-// const userChoice = prompt("Make your selection: Rock, Paper, Scissors!");
+const playerSelection = "rock";
 
-//computer input
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
