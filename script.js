@@ -8,6 +8,13 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+	if (
+		playerSelection !== "rock" ||
+		playerSelection !== "paper" ||
+		playerSelection !== "scissors"
+	) {
+		results = "You did not pick rock, paper, or scissors!";
+	}
 	if (playerSelection === computerSelection) {
 		results = "Tie Game";
 	} else if (
