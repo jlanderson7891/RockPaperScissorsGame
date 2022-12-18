@@ -8,8 +8,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-	let player = playerSelection.toLowerCase();
-	if (player === "rock") {
+	if (playerSelection === "rock") {
 		if (computerSelection === "scissors") {
 			winner = "You win this round!";
 		} else if (computerSelection === "paper") {
@@ -21,7 +20,9 @@ function playRound(playerSelection, computerSelection) {
 	return winner;
 }
 
-const playerSelection = "roCk";
+const playerInput = prompt("Pick rock, paper or scissors!");
+
+const playerSelection = playerInput.trim().toLowerCase();
 
 const computerSelection = getComputerChoice();
 
