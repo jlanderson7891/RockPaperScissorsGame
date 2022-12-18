@@ -8,16 +8,34 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-	if (playerSelection === "rock") {
-		if (computerSelection === "scissors") {
-			winner = "You win this round!";
-		} else if (computerSelection === "paper") {
-			winner = "You Lose";
-		} else {
-			winner = "Tie Game";
-		}
+	if (playerSelection === computerSelection) {
+		results = "Tie Game";
+	} else if (
+		(playerSelection === "rock" && computerSelection === "scissors") ||
+		(playerSelection === "paper" && computerSelection === "rock") ||
+		(playerSelection === "scissors" && computerSelection === "paper")
+	) {
+		results = "You win this round!";
+	} else if (
+		(playerSelection === "rock" && computerSelection === "paper") ||
+		(playerSelection === "paper" && computerSelection === "scissors") ||
+		(playerSelection === "scissors" && computerSelection === "rock")
+	) {
+		results = "You lose!";
 	}
-	return winner;
+
+	// if (playerSelection === "rock" && computerSelection === " scissors") {
+	//     results = "You win this round!";
+	// }
+
+	// (playerSelection === "rock") {
+	// 	if (computerSelection === "scissors") {
+	// 		results = "You win this round!";
+	// 	} else if (computerSelection === "paper") {
+	// 		results = "You Lose";
+	// 	}
+	// }
+	return results;
 }
 
 const playerInput = prompt("Pick rock, paper or scissors!");
